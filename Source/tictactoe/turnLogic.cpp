@@ -21,10 +21,13 @@ void UturnLogic::getCellWin(TArray<int> cellsXO, int& whoIsWin)
 {
 	for (int i = 0; i < countWins; i++)
 	{
-		if (cellsXO[arrayWinCells[i][0]] == cellsXO[arrayWinCells[i][1]] && cellsXO[arrayWinCells[i][0]] == cellsXO[arrayWinCells[i][2]])
+		if (cellsXO[arrayWinCells[i][0]] == cellsXO[arrayWinCells[i][1]] && 
+			cellsXO[arrayWinCells[i][0]] == cellsXO[arrayWinCells[i][2]] &&
+			cellsXO[arrayWinCells[i][0]] != -1)
 		{
-			whoIsWin = cellsXO[arrayWinCells[i][0]];
-			return;
+				whoIsWin = cellsXO[arrayWinCells[i][0]];
+				return;
 		}
 	}
+	whoIsWin = -1;
 }
